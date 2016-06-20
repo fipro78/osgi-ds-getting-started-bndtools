@@ -1,0 +1,22 @@
+#-runfw: org.apache.felix.framework;version=5
+#-runee: JavaSE-1.7
+
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+
+-runbundles: \
+	org.apache.felix.gogo.command;version='[0.16.0,0.16.1)',\
+	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
+	org.apache.felix.gogo.shell;version='[0.12.0,0.12.1)',\
+	org.apache.felix.scr;version='[2.0.2,2.0.3)',\
+	org.fipro.inverter.api;version=snapshot,\
+	org.fipro.inverter.provider;version=snapshot
+
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	osgi.identity;filter:='(osgi.identity=org.fipro.inverter.api)',\
+	osgi.identity;filter:='(osgi.identity=org.fipro.inverter.provider)'
+-runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
+-runee: JavaSE-1.8
