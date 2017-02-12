@@ -21,12 +21,12 @@ public class Hitman implements OneShot {
 
     @Activate
     void activate() {
-//    	System.out.println("Hitman activated");
+    	System.out.println("Hitman activated");
     }
     
     @Deactivate
     void deactivate() {
-//    	System.out.println("Hitman deactivated");
+    	System.out.println("Hitman deactivated");
     }
 
     @Override

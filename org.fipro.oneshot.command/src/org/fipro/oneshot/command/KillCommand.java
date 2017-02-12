@@ -19,12 +19,12 @@ public class KillCommand {
 
     @Activate
     void activate() {
-//    	System.out.println("KillCommand activated");
+    	System.out.println("KillCommand activated");
     }
     
     @Deactivate
     void deactivate() {
-//    	System.out.println("KillCommand deactivated");
+    	System.out.println("KillCommand deactivated");
     }
 
     public void kill(String target) {
