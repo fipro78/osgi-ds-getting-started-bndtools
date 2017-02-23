@@ -2,7 +2,8 @@
 	osgi.annotation;version=6.0.1,\
 	osgi.core;version=6.0,\
 	osgi.cmpn;version=6.0,\
-	org.fipro.oneshot.api;version=latest
+	org.fipro.oneshot.api;version=latest,\
+	org.apache.felix.gogo.runtime
 
 -testpath: \
 	${junit}
