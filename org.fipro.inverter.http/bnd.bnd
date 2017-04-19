@@ -1,0 +1,20 @@
+-buildpath: \
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0,\
+	org.fipro.inverter.api;version=latest,\
+	org.apache.felix.http.jetty,\
+	org.apache.felix.http.servlet-api
+
+-testpath: \
+	${junit}
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: \
+	org.fipro.inverter.http,\
+	org.fipro.inverter.http.eclipse
+
+-includeresource: resources=resources
