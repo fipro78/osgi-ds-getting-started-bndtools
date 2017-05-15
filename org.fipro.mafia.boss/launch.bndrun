@@ -1,0 +1,25 @@
+#-runfw: org.apache.felix.framework;version=5
+#-runee: JavaSE-1.7
+
+-runprovidedcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+
+-runbundles: \
+	org.apache.felix.eventadmin;version='[1.4.6,1.4.7)',\
+	org.apache.felix.gogo.command;version='[0.16.0,0.16.1)',\
+	org.apache.felix.gogo.runtime;version='[0.16.2,0.16.3)',\
+	org.apache.felix.gogo.shell;version='[0.12.0,0.12.1)',\
+	org.apache.felix.scr;version='[2.0.2,2.0.3)',\
+	org.fipro.mafia.boss;version=snapshot,\
+	org.fipro.mafia.common;version=snapshot,\
+	org.fipro.mafia.soldier;version=snapshot
+
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	osgi.identity;filter:='(osgi.identity=org.fipro.mafia.boss)',\
+	osgi.identity;filter:='(osgi.identity=org.fipro.mafia.common)',\
+	osgi.identity;filter:='(osgi.identity=org.fipro.mafia.soldier)'
+-runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
+-runee: JavaSE-1.8
