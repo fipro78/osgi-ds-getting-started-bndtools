@@ -1,0 +1,6 @@
+#
+# org.fipro.modifier.api
+#
+
+-buildpath:  \
+	osgi.annotation
