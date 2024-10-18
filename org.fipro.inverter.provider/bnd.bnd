@@ -2,3 +2,11 @@
 	osgi.annotation, \
 	org.osgi.service.component.annotations,\
 	org.fipro.inverter.api;version=latest
+
+-testpath: \
+	org.opentest4j,\
+	org.apiguardian.api,\
+	junit-jupiter-api,\
+    junit-platform-commons,\
+    junit-platform-engine,\
+    junit-jupiter-engine

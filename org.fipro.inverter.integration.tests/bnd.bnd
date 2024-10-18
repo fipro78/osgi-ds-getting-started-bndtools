@@ -1,0 +1,20 @@
+Test-Cases: ${classes;HIERARCHY_INDIRECTLY_ANNOTATED;org.junit.platform.commons.annotation.Testable;CONCRETE}
+
+-dependson: \
+	org.fipro.inverter.provider
+	
+-buildpath:  \
+	osgi.annotation,\
+	org.osgi.namespace.service,\
+	org.osgi.service.component.annotations,\
+	org.fipro.inverter.api;version=latest,\
+	org.opentest4j,\
+	org.apiguardian.api,\
+	junit-jupiter-api,\
+    junit-jupiter-engine,\
+    junit-jupiter-params,\
+    junit-platform-commons,\
+    junit-platform-engine,\
+    junit-platform-launcher,\
+    org.osgi.test.common,\
+    org.osgi.test.junit5
