@@ -4,12 +4,9 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
 @Component(
-	configurationPid = {"$", "AdminConfiguredComponent"},
-    property = {
-        "message=Welcome to the inline configured service",
-        "iteration:Integer=3"
-    }
+	configurationPid = {"$", "AdminConfiguredComponent"}
 )
+@MessageConfig(message = "Welcome to the inline configured service", iteration = 3)
 public class StaticConfiguredComponent {
 
     @Activate

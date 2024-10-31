@@ -1,0 +1,2 @@
+-buildpath: org.osgi:org.osgi.service.configurator
+-includeresource: {src/main/resources}

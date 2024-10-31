@@ -5,23 +5,29 @@
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	osgi.identity;filter:='(osgi.identity=org.fipro.ds.config)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.ds.configurable)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.ds.configurator)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.ds.other)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.metatype)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.ds.data.api)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.ds.data.offline)',\
-	osgi.identity;filter:='(osgi.identity=org.fipro.ds.data.online)'
+	osgi.identity;filter:='(osgi.identity=org.fipro.ds.data.online)',\
+	osgi.identity;filter:='(&(osgi.identity=org.eclipse.parsson.jakarta.json)(version>=1.1.5))'
 	
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 -runee: JavaSE-17
 -runbundles: \
+	org.apache.felix.cm.json;version='[2.0.2,2.0.3)',\
 	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
+	org.apache.felix.configurator;version='[1.0.18,1.0.19)',\
 	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
 	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
 	org.apache.felix.metatype;version='[1.2.4,1.2.5)',\
 	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
+	org.eclipse.parsson.jakarta.json;version='[1.1.5,1.1.6)',\
+	org.fipro.ds.config;version=snapshot,\
 	org.fipro.ds.configurable;version=snapshot,\
 	org.fipro.ds.configurator;version=snapshot,\
 	org.fipro.ds.data.api;version=snapshot,\
@@ -30,4 +36,5 @@
 	org.fipro.ds.other;version=snapshot,\
 	org.osgi.service.component;version='[1.5.1,1.5.2)',\
 	org.osgi.service.log;version='[1.5.0,1.5.1)',\
+	org.osgi.util.converter;version='[1.0.9,1.0.10)',\
 	osgi.promise;version='[8.1.0,8.1.1)'

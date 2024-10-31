@@ -1,2 +1,4 @@
--buildpath: osgi.annotation
+-buildpath: \
+	osgi.annotation,\
+	org.osgi.service.component.annotations
 

@@ -21,8 +21,7 @@ public class ConfCommand {
     ConfigurationAdmin cm;
 
     public void conf(String msg, int count) throws IOException {
-        Configuration config =
-            cm.getConfiguration("AdminConfiguredComponent", "?");
+        Configuration config = cm.getConfiguration("AdminConfiguredComponent", "?");
         Hashtable<String, Object> props = new Hashtable<>();
         props.put("message", msg);
         props.put("iteration", count);

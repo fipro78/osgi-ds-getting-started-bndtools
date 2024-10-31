@@ -44,8 +44,9 @@ public class AdminReferencingComponent {
     }
 
     private void printMessage(Map<String, Object> properties) {
-        String msg = (String) properties.get("message");
-        Integer iter = (Integer) properties.get("iteration");
+        String msg = properties.getOrDefault("message", "").toString();
+        int iter = ((Number)properties.getOrDefault("iteration", 0)).intValue();
         System.out.println("[" + msg + "|" + iter + "]");
+        System.out.println();
     }
 }

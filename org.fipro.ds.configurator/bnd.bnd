@@ -1,6 +1,8 @@
 -buildpath:  \
 	osgi.annotation, \
 	osgi.core,\
+	org.osgi.service.component,\
 	org.osgi.service.component.annotations,\
 	org.osgi.service.cm,\
+	org.osgi.service.condition,\
 	org.fipro.ds.data.api;version=latest

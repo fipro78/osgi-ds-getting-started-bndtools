@@ -1,12 +1,12 @@
 package org.fipro.ds.configurator;
 
-import java.io.IOException;
-import java.util.Dictionary;
+import java.io.IOException; 
+import java.util.Dictionary; 
 import java.util.Hashtable;
 
-import org.osgi.service.cm.Configuration;
-import org.osgi.service.cm.ConfigurationAdmin;
-import org.osgi.service.component.annotations.Component;
+import org.osgi.service.cm.Configuration; 
+import org.osgi.service.cm.ConfigurationAdmin; 
+import org.osgi.service.component.annotations.Component; 
 import org.osgi.service.component.annotations.Reference;
 
 @Component(
@@ -18,21 +18,22 @@ import org.osgi.service.component.annotations.Reference;
 )
 public class ToggleMinimumCardinalityCommand {
 
-    @Reference
-    ConfigurationAdmin admin;
+	@Reference 
+	ConfigurationAdmin admin;
 
-    public void cardinality(int count) throws IOException {
-        Configuration config =
-            this.admin.getConfiguration("org.fipro.ds.configurator.DataRetriever");
+	public void cardinality(int count) throws IOException { 
+		Configuration config =
+                    this.admin.getConfiguration("org.fipro.ds.configurator.DataRetriever");
 
-        Dictionary<String, Object> props = null;
-        if (config != null && config.getProperties() != null) {
-            props = config.getProperties();
-        } else {
-            props = new Hashtable<String, Object>();
-        }
+		Dictionary<String, Object> props = null; 
+		if (config != null && config.getProperties() != null) { 
+		    props = config.getProperties(); 
+		} 
+		else { 
+		    props = new Hashtable<>(); 
+		}
 
-        props.put("DataService.cardinality.minimum", count);
-        config.update(props);
-    }
+		props.put("dataServices.cardinality.minimum", count); 
+		config.update(props); 
+	} 
 }
