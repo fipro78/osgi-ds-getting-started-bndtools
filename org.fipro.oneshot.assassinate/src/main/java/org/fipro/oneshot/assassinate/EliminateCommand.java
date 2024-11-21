@@ -12,16 +12,15 @@ import org.osgi.service.component.annotations.ReferenceScope;
         "osgi.command.scope=fipro",
         "osgi.command.function=eliminate"},
     service=EliminateCommand.class,
-    reference=@Reference(name="hitman", service=OneShot.class, scope=ReferenceScope.PROTOTYPE_REQUIRED)
+    reference=@Reference(
+    	name="hitman", 
+    	service=OneShot.class, 
+    	scope=ReferenceScope.PROTOTYPE_REQUIRED)
 )
 public class EliminateCommand {
 
+	@Activate
     private ComponentContext context;
-
-    @Activate
-    void activate(ComponentContext context) {
-        this.context = context;
-    }
 
     public void eliminate(String target) {
         OneShot hitman = (OneShot) this.context.locateService("hitman");

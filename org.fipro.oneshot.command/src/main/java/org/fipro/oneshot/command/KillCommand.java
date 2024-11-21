@@ -5,6 +5,7 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceScope;
 
 @Component(
     property= {
@@ -14,17 +15,19 @@ import org.osgi.service.component.annotations.Reference;
 )
 public class KillCommand {
 
-	@Reference
+	@Reference(scope=ReferenceScope.PROTOTYPE_REQUIRED)
     private OneShot killer;
 
     @Activate
     void activate() {
-    	System.out.println("KillCommand activated");
+    	System.out.println(
+    			getClass().getSimpleName() + " activated");
     }
     
     @Deactivate
     void deactivate() {
-    	System.out.println("KillCommand deactivated");
+    	System.out.println(
+    			getClass().getSimpleName() + " activated");
     }
 
     public void kill(String target) {
