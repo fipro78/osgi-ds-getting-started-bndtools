@@ -20,7 +20,7 @@
 	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
 	org.apache.felix.metatype;version='[1.2.4,1.2.5)',\
-	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
+	org.apache.felix.scr;version='[2.2.12,2.2.13)',\
 	org.fipro.oneshot.api;version=snapshot,\
 	org.fipro.oneshot.assassinate;version=snapshot,\
 	org.fipro.oneshot.command;version=snapshot,\

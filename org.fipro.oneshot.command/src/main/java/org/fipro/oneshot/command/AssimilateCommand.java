@@ -4,24 +4,23 @@ import java.io.IOException;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+import org.apache.felix.service.command.CommandProcessor;
 import org.apache.felix.service.command.Descriptor;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.service.cm.Configuration;
 import org.osgi.service.cm.ConfigurationAdmin;
-import org.osgi.service.cm.annotations.RequireConfigurationAdmin;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 @Component(
     property= {
-        "osgi.command.scope=fipro",
-        "osgi.command.function=assimilate"},
+		CommandProcessor.COMMAND_SCOPE + "=fipro",
+		CommandProcessor.COMMAND_FUNCTION + "=assimilate"},
     service=AssimilateCommand.class
 )
-@RequireConfigurationAdmin
 public class AssimilateCommand {
 
-    @Reference
+	@Reference
     ConfigurationAdmin configAdmin;
 
     @Descriptor("assimilates the given soldier to the Borg")
@@ -37,12 +36,12 @@ public class AssimilateCommand {
         try {
             // filter to find the Borg created by the
             // Managed Service Factory with the given name
-            String filter = "(&(name=" + soldier + ")" + "(service.factoryPid=org.fipro.oneshot.Borg))";
+            String filter = "(&(name=" + soldier + ")" + "(service.factoryPid=Borg))";
             Configuration[] configurations = this.configAdmin.listConfigurations(filter);
 
             if (configurations == null || configurations.length == 0) {
                 //create a new configuration
-                Configuration config = this.configAdmin.createFactoryConfiguration("org.fipro.oneshot.Borg", "?");
+                Configuration config = this.configAdmin.createFactoryConfiguration("Borg", "?");
                 Hashtable<String, Object> map = new Hashtable<>();
                 if (newName == null) {
                     map.put("name", soldier);

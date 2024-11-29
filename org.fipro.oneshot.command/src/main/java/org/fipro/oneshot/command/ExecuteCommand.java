@@ -10,17 +10,17 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
     property= {
         "osgi.command.scope=fipro",
-        "osgi.command.function=execute"},
-    service=ExecuteCommand.class
-)
+        "osgi.command.function=execute"
+    },
+    service=ExecuteCommand.class ) 
 public class ExecuteCommand {
 
-    @Reference(target="(service.factoryPid=org.fipro.oneshot.Borg)")
+    @Reference(target="(service.factoryPid=Borg)")
     private volatile List<OneShot> borgs;
 
-    public void execute(String target) {
-        for (ListIterator<OneShot> it = borgs.listIterator(borgs.size()); it.hasPrevious(); ) {
-            it.previous().shoot(target);
-        }
-    }
+    public void execute(String target) { 
+        for (ListIterator<OneShot> it = borgs.listIterator(borgs.size()); it.hasPrevious(); ) { 
+            it.previous().shoot(target); 
+        } 
+    } 
 }

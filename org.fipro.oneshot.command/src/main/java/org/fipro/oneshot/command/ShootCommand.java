@@ -1,5 +1,7 @@
 package org.fipro.oneshot.command;
 
+import java.util.Hashtable;
+
 import org.fipro.oneshot.OneShot;
 import org.osgi.service.component.ComponentFactory;
 import org.osgi.service.component.ComponentInstance;
@@ -14,12 +16,14 @@ import org.osgi.service.component.annotations.Reference;
 )
 public class ShootCommand {
 
-    @Reference(target = "(component.factory=fipro.oneshot.factory)")
+	@Reference(target = "(&(component.factory=fipro.oneshot.factory)(organization=marine))")
     private ComponentFactory<OneShot> factory;
 
     public void shoot(String target) {
         // create a new service instance
-        ComponentInstance<OneShot> instance = this.factory.newInstance(null);
+    	Hashtable<String, Object> properties = new Hashtable<>();
+//    	properties.put("shooter.name", "Hitman Agent 47");
+    	ComponentInstance<OneShot> instance = this.factory.newInstance(properties);
         OneShot shooter = instance.getInstance();
         try {
             shooter.shoot(target);

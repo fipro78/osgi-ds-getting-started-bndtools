@@ -8,22 +8,20 @@
 	osgi.identity;filter:='(osgi.identity=org.fipro.oneshot.api)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.oneshot.assassinate)',\
 	osgi.identity;filter:='(osgi.identity=org.fipro.oneshot.command)',\
-	osgi.identity;filter:='(osgi.identity=org.fipro.oneshot.provider)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.metatype)'
+	osgi.identity;filter:='(osgi.identity=org.fipro.oneshot.provider)'
 	
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 -runee: JavaSE-17
+
 -runbundles: \
 	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
 	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
 	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
-	org.apache.felix.metatype;version='[1.2.4,1.2.5)',\
 	org.apache.felix.scr;version='[2.2.12,2.2.13)',\
 	org.fipro.oneshot.api;version=snapshot,\
 	org.fipro.oneshot.assassinate;version=snapshot,\
 	org.fipro.oneshot.command;version=snapshot,\
 	org.fipro.oneshot.provider;version=snapshot,\
 	org.osgi.service.component;version='[1.5.1,1.5.2)',\
-	org.osgi.service.log;version='[1.5.0,1.5.1)',\
 	osgi.promise;version='[8.1.0,8.1.1)'
