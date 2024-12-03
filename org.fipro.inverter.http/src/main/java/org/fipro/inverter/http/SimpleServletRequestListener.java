@@ -4,10 +4,11 @@ import jakarta.servlet.ServletRequestEvent;
 import jakarta.servlet.ServletRequestListener;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.servlet.whiteboard.propertytypes.HttpWhiteboardListener;
 
-@Component(property = "osgi.http.whiteboard.listener=true")
-public class SimpleServletRequestListener
-    implements ServletRequestListener {
+@Component
+@HttpWhiteboardListener
+public class SimpleServletRequestListener implements ServletRequestListener {
 
     public void requestInitialized(ServletRequestEvent sre) {
         System.out.println("Request initialized for client: "
@@ -18,5 +19,4 @@ public class SimpleServletRequestListener
         System.out.println("Request destroyed for client: "
             + sre.getServletRequest().getRemoteAddr());
     }
-
 }

@@ -4,6 +4,7 @@
 	org.osgi.service.component.annotations,\
 	org.fipro.inverter.api;version=latest,\
 	org.apache.felix.http.jetty,\
-	org.apache.felix.http.servlet-api
+	org.apache.felix.http.servlet-api,\
+    org.osgi.service.servlet
 
 -includeresource: resources=resources
