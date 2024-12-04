@@ -3,4 +3,4 @@
 	osgi.core,\
 	org.osgi.service.component.annotations,\
 	org.fipro.mafia.common;version=latest,\
-	org.apache.felix.eventadmin
+	org.osgi.service.event

@@ -9,14 +9,12 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventAdmin;
-import org.osgi.service.event.annotations.RequireEventAdmin;
 
 @Component(
     property = {
         "osgi.command.scope=fipro",
         "osgi.command.function=boss" },
     service = BossCommand.class)
-@RequireEventAdmin
 public class BossCommand {
 
     @Reference
